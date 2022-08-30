@@ -1,6 +1,6 @@
 from multiprocessing import context
 
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 
@@ -35,7 +35,7 @@ def topic(request, topic_id: int):
         topic_id (int): <int:topic_id>
     """
     # usamos get to retrieve topic
-    topic = Topic.objects.get(id=topic_id)
+    topic = get_object_or_404(Topic, id=topic_id)
     if topic.owner != request.user:
         raise Http404
     # obtenemos las entries relacionadas con el topic y las ordenamos por fecha, el (-) ordena la lista al reves
