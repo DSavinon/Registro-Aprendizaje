@@ -1,0 +1,18 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+<h1>
+    Add a New Topic:
+</h1>
+
+{# action le dice al navegador a donde mandar la informacion ingresada #}
+{# con method post le decimos al navegador que ingrese la informacion como POST request #}
+<form action="{% url 'learning_logs:new_topic' %}" method="post">
+    {# csrf tag es para preevenir ataques #}
+    {% csrf_token %}
+    {# variable form para que nos cree una forma y as_p para que agregue los elementos en formato de parrafo #}
+    {{ form.as_p }}
+    <button name="Submit">Add Topic</button>
+</form>
+{% endblock content %}
