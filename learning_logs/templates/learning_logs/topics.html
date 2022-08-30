@@ -1,7 +1,7 @@
 {% extends "learning_logs/base.html" %}
 {% block content%}
 
-<h1>Topics</h1>
+<h1>Temas</h1>
 
 {% for topic in topics.all %}
 <div class="list-group w-auto">
@@ -18,5 +18,5 @@
 </div>
 {% endfor %}
 
-<a href="{% url 'learning_logs:new_topic' %}">Add a New Topic</a>
+<a href="{% url 'learning_logs:new_topic' %}">Agregar un Tema Nuevo</a>
 {% endblock content %}

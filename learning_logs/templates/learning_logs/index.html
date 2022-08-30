@@ -2,12 +2,16 @@
 
 {% block page_header %}
 <div class="jumbotron">
-    <h1 class="display-3">Track your Learning.</h1>
+    <h1 class="display-3">Lleva el Registro de tu Aprendizaje</h1>
 
-    <p class="lead">Make your own Learning Log, and keep a list of the topics you're learning about. Whenever you learn
-        something new about a topic, make an entry summarizing what you've learned.
+    <p class="lead">Haga su propio Registro de Aprendizaje y mantenga una lista de los temas sobre los que está
+        aprendiendo. siempre que aprenda algo nuevo sobre un tema, haga una entrada que resuma lo que ha aprendido.
     </p>
 
-    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">Register &raquo;</a>
+    {% if user.is_authenticated %}
+        <a class="btn btn-lg btn-primary" href="{% url 'learning_logs:topics' %}" role="button">Temas &raquo;</a>
+    {% else %}
+        <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">Registrarse &raquo;</a>
+    {% endif %}
 </div>
 {% endblock page_header %}

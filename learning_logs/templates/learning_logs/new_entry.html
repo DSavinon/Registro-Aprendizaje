@@ -7,7 +7,7 @@
 </p>
 
 <h1>
-    Add a New Entry:
+    Agregar una Nueva Entrada: 
 </h1>
 
 <form action="{% url 'learning_logs:new_entry' topic.id %}" method="post">
@@ -15,6 +15,6 @@
     {% csrf_token %}
     {# variable form para que nos cree una forma y as_p para que agregue los elementos en formato de parrafo #}
     {{ form.as_p }}
-    <button name="Submit">Add Entry</button>
+    <button name="Submit">Agregar</button>
 </form>
 {% endblock content %}

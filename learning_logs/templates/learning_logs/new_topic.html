@@ -3,7 +3,7 @@
 {% block content %}
 
 <h1>
-    Add a New Topic:
+    Agregar un Tema Nuevo: 
 </h1>
 
 {# action le dice al navegador a donde mandar la informacion ingresada #}
@@ -13,6 +13,6 @@
     {% csrf_token %}
     {# variable form para que nos cree una forma y as_p para que agregue los elementos en formato de parrafo #}
     {{ form.as_p }}
-    <button name="Submit">Add Topic</button>
+    <button name="Submit">Agregar</button>
 </form>
 {% endblock content %}
